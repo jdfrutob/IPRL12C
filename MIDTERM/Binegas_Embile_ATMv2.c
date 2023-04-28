@@ -174,6 +174,7 @@ void make_Deposit()
 }
 void exit_prog()
 {
+    //hatdog
     printf("\033[0;33m");
     printf("->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->\n\n");
     printf("\t\t\tThank you!\n");
