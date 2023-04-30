@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "valdez.h"
 
+// This line creates a constant value named `initial_balance`
 #define initial_balance 5000.00
 
 // This code defines a struct called ATM_Struct, which represents an ATM account.
@@ -22,18 +23,13 @@ typedef struct ATM_Struct
 
 
 // This is an array of structures that represents ATM accounts.
+// In this specific order : PIN number, Account number, Name, Initial Balance of 5000 Pesos.
 ATM accounts[] = {
-    // The first account has an account number of 1225, a PIN of 0001, a name of "Binegas, John Daniel", and an initial balance.
     {1225,0001,"Binegas, John Daniel",initial_balance},
-    // The second account has an account number of 2512, a PIN of 0002, a name of "Dineros, Trisha Anne", and an initial balance.
     {2512,0002,"Dineros, Trisha Anne",initial_balance},
-    // The third account has an account number of 0123, a PIN of 0003, a name of "Bautista, Glen Angelo", and an initial balance.
     {0123,0003,"Bautista, Glen Angelo",initial_balance},
-    // The fourth account has an account number of 5555, a PIN of 0004, a name of "Alastoy, John Nelson", and an initial balance.
     {5555,0004,"Alastoy, John Nelson",initial_balance},
-    // The fifth account has an account number of 0000, a PIN of 0005, a name of "Embile, Lance Raphael", and an initial balance.
     {0000,0005,"Embile, Lance Raphael",initial_balance},
-    // The sixth account has an account number of 1234, a PIN of 0006, a name of "Valdez, Marc Joshua", and an initial balance.
     {1234,0006,"Valdez, Marc Joshua",initial_balance}
 };
 
