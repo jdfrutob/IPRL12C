@@ -19,7 +19,9 @@ ATM accounts[] = {
     {5555,0004,"Alastoy, John Nelson",initial_balance},
     {0000,0005,"Embile, Lance Raphael",initial_balance},
     {1234,0006,"Valdez, Marc Joshua",initial_balance}
-};  
+};
+
+ATM *selected_Account = NULL;
 
 float balance;
 
@@ -55,11 +57,11 @@ static void input_Pin()
         }
         if (found)
         {
-            balance = accounts[currentAccountIndex].account_balance;
+            selected_Account = &accounts[currentAccountIndex];
             printf("\033[0;33m");
             printf("\n\t\t\tWelcome, %s!\n", accounts[currentAccountIndex].account_name);
             printf("->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->\n");
-            selection_Menu();
+            selection_Menu(selected_Account);
         }
         else
             printf("Pin number not found. Try Again.\n");
@@ -130,7 +132,7 @@ static void selection_Menu()
 static void check_Balance()
 {
     printf("\033[0;35m ");
-    printf("\t\t\tCurrent Balance: %.2f\n\n", balance);
+    printf("\t\t\tCurrent Balance: %.2f\n\n", selected_Account->account_balance);
     printf("->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->\n");
 }
 static void make_Withdrawal()
@@ -149,9 +151,9 @@ static void make_Withdrawal()
         
     else
     {
-        balance -= amount;
+        selected_Account->account_balance -= amount;
         printf("Withdrawal successful.\n");
-        printf("Current Balance: %.2f\n", balance);
+        printf("Current Balance: %.2f\n", selected_Account->account_balance);
         printf("->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->\n");
     }
 }
@@ -161,9 +163,9 @@ static void make_Deposit()
     float amount = get_float("Enter Deposit Amount: ","-1234567890.\n",-100000,100000);
     if (amount > 0)
     {
-        balance += amount;
+        selected_Account->account_balance += amount;
         printf("Deposit successful.\n");
-        printf("Current Balance: %.2f\n\n", balance);
+        printf("Current Balance: %.2f\n\n", selected_Account->account_balance);
         printf("->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->\n");
     }
     else
