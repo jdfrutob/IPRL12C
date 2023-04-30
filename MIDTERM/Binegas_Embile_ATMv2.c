@@ -23,20 +23,20 @@ ATM accounts[] = {
 
 float balance;
 
-void input_Pin();
-void selection_Menu();
-void check_Balance();
-void make_Withdrawal();
-void make_Deposit();
-void exit_prog();
+static void input_Pin();
+static void selection_Menu();
+static void check_Balance();
+static void make_Withdrawal();
+static void make_Deposit();
+static void exit_prog();
 
-void main()
+int main()
 {
     printf("\033[0;35m ");
     printf("\n\t\t\t\tWelcome To MyATM\n");
-    pin();
+    input_Pin();
 }
-void input_Pin()
+static void input_Pin()
 {
     printf("->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->\n");
     while (1)
@@ -59,13 +59,13 @@ void input_Pin()
             printf("\033[0;33m");
             printf("\n\t\t\tWelcome, %s!\n", accounts[currentAccountIndex].account_name);
             printf("->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->\n");
-            menu();
+            selection_Menu();
         }
         else
             printf("Pin number not found. Try Again.\n");
     }
 }
-void selection_Menu()
+static void selection_Menu()
 {
     while (1)
     {
@@ -88,21 +88,21 @@ void selection_Menu()
                 printf("->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->");
                 printf("\033[0;35m ");
                 printf("\n\t\t\tYou Have Chosen To Check Your Balance\n");
-                Bal_CHK();
+                check_Balance();
                 break;
 
             case 2:
                 printf("->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->");
                 printf("\033[0;33m");
                 printf("\n\t\t\tYou Have Chosen To Make a Deposit\n");
-                deposit();
+                make_Deposit();
                 break;
 
            case 3:
                 printf("->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->");
                 printf("\033[0;35m ");
                 printf("\n\t\t\tYou Have Chosen To Make a Withdrawal\n");
-                withdraw();
+                make_Withdrawal();
                 break;
 
             case 4:
@@ -110,7 +110,7 @@ void selection_Menu()
                 printf("\033[0;33m");
                 system("cls");
                 printf("\n\t\t\tYou Have Chosen to Logout or Change Account\n");
-                pin();
+                input_Pin();
                 break;
 
             case 5:
@@ -127,13 +127,13 @@ void selection_Menu()
         
     }
 }
-void check_Balance()
+static void check_Balance()
 {
     printf("\033[0;35m ");
     printf("\t\t\tCurrent Balance: %.2f\n\n", balance);
     printf("->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->\n");
 }
-void make_Withdrawal()
+static void make_Withdrawal()
 {
     float amount = get_float("Enter Withdrawal Amount: ","-1234567890.\n",-100000,100000);
     if (amount <= 0)
@@ -155,7 +155,7 @@ void make_Withdrawal()
         printf("->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->\n");
     }
 }
-void make_Deposit()
+static void make_Deposit()
 {
     printf("\033[0;33m");
     float amount = get_float("Enter Deposit Amount: ","-1234567890.\n",-100000,100000);
@@ -172,9 +172,8 @@ void make_Deposit()
         printf("->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->\n");
     }
 }
-void exit_prog()
+static void exit_prog()
 {
-    //hatdog
     printf("\033[0;33m");
     printf("->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->\n\n");
     printf("\t\t\tThank you!\n");
