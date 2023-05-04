@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "valdez.h"
-
+//v2
 #define initial_balance 5000.00
 
 typedef struct ATM_Struct
