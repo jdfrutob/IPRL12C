@@ -22,7 +22,6 @@ typedef struct ATM_Struct
     float account_balance;
 } ATM;
 
-
 // This is an array of structures that represents ATM accounts.
 // In this specific order : PIN number, Account number, Name, Initial Balance of 5000 Pesos.
 ATM accounts[] = {
