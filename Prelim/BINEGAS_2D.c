@@ -13,9 +13,14 @@ void exer_6();
 void exer_7();
 void exer_8();
 void exit_prog();
+
+// This is the main function where the program begins
 int main()
 {
+    // Print a message to the console to indicate that we are running Binegas 2D Array Exercises
     printf("Binegas 2D Array Exercises:\n");
+
+    // Declare and initialize an array of strings named Exercises
     char* Exercises[] =
     {
         "Exercise 1",
@@ -28,62 +33,82 @@ int main()
         "Exercise 8",
         "Exit Program"
     };
+
+    // Determine the number of exercises in the array
     int numExercises = sizeof(Exercises)/sizeof(Exercises[0]); 
+
+    // Call the menu function and pass in the Exercises array and the number of exercises
     menu(Exercises,numExercises);
+
+    // Get an integer value from the user between 1 and 9
     int usersel = get_int("Pick an Exercise: ","123456789\n",1,9);
 
+    // Use a switch statement to determine which exercise the user selected
     switch (usersel)
     {
+        // If the user selected Exercise 1, run exer_1 function and print a message to the console
         case 1:
             printf("You Have Chosen Exercise 1\n\n");
             exer_1();
             break;
 
+        // If the user selected Exercise 2, run exer_2 function and print a message to the console
         case 2:
             printf("You Have Chosen Exercise 2\n\n"); 
             exer_2();
             break;
-        
+
+        // If the user selected Exercise 3, run exer_3 function and print a message to the console
         case 3:
             printf("You Have Chosen Exercise 3\n\n");
             exer_3();
             break;
 
+        // If the user selected Exercise 4, run exer_4 function and print a message to the console
         case 4:
             printf("You Have Chosen Exercise 4\n\n");
             exer_4();
             break;
-        
+
+        // If the user selected Exercise 5, run exer_5 function and print a message to the console
         case 5:
             printf("You Have Chosen Exercise 5\n\n");
             exer_5();
             break;
-        
+
+        // If the user selected Exercise 6, run exer_6 function and print a message to the console
         case 6:
             printf("You Have Chosen Exercise 6\n\n");
             exer_6();
             break;
-        
+
+        // If the user selected Exercise 7, run exer_7 function and print a message to the console
         case 7:
             printf("You Have Chosen Exercise 7\n\n");
             exer_7();
             break;
 
+        // If the user selected Exercise 8, run exer_8 function and print a message to the console
         case 8:
             printf("You Have Chosen Exercise 8\n\n");
             exer_8();
             break;
 
+        // If the user selected Exit Program, run the exit_prog function and print a message to the console
         case 9:
             printf("You Have Chosen to Exit the Program.......\n\n");
             exit_prog();
             break;
 
+        // If the user selected something other than 1-9, do nothing and continue the loop
         default:
             break;
     }
+
+    // Call the main function again to restart the program
     main();
 }
+
 void menu(char* Exercises[], int size)
 {
     for(int i=0; i<size; i++)
