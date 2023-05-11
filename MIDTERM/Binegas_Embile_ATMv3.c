@@ -20,17 +20,24 @@ typedef struct ATM_Struct
 
     // This field stores the user's account balance.
     float account_balance;
+
+    // This field stores the number of withdrawals made from the account.
+    int num_Withdrawals;
+
+    // This field stores the number of deposits made to the account.
+    int num_Deposits;
+
 } ATM;
 
 // This is an array of structures that represents ATM accounts.
-// In this specific order : PIN number, Account number, Name, Initial Balance of 5000 Pesos.
+// In this specific order : PIN number, Account number, Name, Initial Balance of 5000 Pesos,Number of withdrawals,Number of deposits.
 ATM accounts[] = {
-    {1225,0001,"Binegas, John Daniel",initial_balance},
-    {2512,0002,"Dineros, Trisha Anne",initial_balance},
-    {0123,0003,"Bautista, Glen Angelo",initial_balance},
-    {5555,0004,"Alastoy, John Nelson",initial_balance},
-    {0000,0005,"Embile, Lance Raphael",initial_balance},
-    {1234,0006,"Valdez, Marc Joshua",initial_balance}
+    {1225,0001,"Binegas, John Daniel",initial_balance,0,0},
+    {2512,0002,"Dineros, Trisha Anne",initial_balance,0,0},
+    {0123,0003,"Bautista, Glen Angelo",initial_balance,0,0},
+    {5555,0004,"Alastoy, John Nelson",initial_balance,0,0},
+    {0000,0005,"Embile, Lance Raphael",initial_balance,0,0},
+    {1234,0006,"Valdez, Marc Joshua",initial_balance,0,0}
 };
 
 // Declare a pointer variable named 'selected_Account' of type 'ATM' and initialize it to NULL.
@@ -51,6 +58,9 @@ static void make_Withdrawal();
 
 // This section defines the function make_Deposit
 static void make_Deposit();
+
+// This function displays the balance and transaction counts for a given account.
+static void account_Info(ATM *account);
 
 // This section defines the function exit_prog
 static void exit_prog();
@@ -125,6 +135,7 @@ static void selection_Menu()
             "Check Balance",
             "Deposit",
             "Withdrawal",
+            "Account Information",
             "Logout or Change Account",
             "Exit Program"
         };
@@ -166,8 +177,16 @@ static void selection_Menu()
                 make_Withdrawal();
                 break;
 
-            // If the user selects "Logout or Change Account", prompt for the PIN and return to the login screen
+            
             case 4:
+                printf("->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->");
+                printf("\033[0;33m");
+                printf("\n\t\t\tYou Have Chosen to Display Account Information\n");
+                account_Info(selected_Account);
+                break;
+
+            // If the user selects "Logout or Change Account", prompt for the PIN and return to the login screen
+            case 5:
                 printf("->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->");
                 printf("\033[0;33m");
                 system("cls");
@@ -176,7 +195,7 @@ static void selection_Menu()
                 break;
 
             // If the user selects "Exit Program", exit the program
-            case 5:
+            case 6:
                 printf("->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->");
                 printf("\033[0;33m");
                 printf("\n\t\t\tYou Have Chosen to Exit the Program.......\n");
@@ -226,6 +245,9 @@ static void make_Withdrawal()
     // If the amount entered is valid, subtract it from the account balance and print a success message to the console.
     else
     {
+        // This line increments the number of withdrawals for the selected account.
+        selected_Account->num_Withdrawals++;
+
         selected_Account->account_balance -= amount;
         printf("Withdrawal successful.\n");
         printf("Current Balance: %.2f\n", selected_Account->account_balance);
@@ -245,6 +267,9 @@ static void make_Deposit()
     // If the amount to deposit is greater than zero:
     if (amount > 0)
     {
+        // This line increments the number of deposits for the selected account.
+        selected_Account->num_Deposits++;
+        
         // Add the deposited amount to the currently selected account's balance.
         selected_Account->account_balance += amount;
 
@@ -266,11 +291,33 @@ static void make_Deposit()
     }
 }
 
+// Define a function named account_Info that takes in a pointer named account of type ATM
+static void account_Info(ATM *account)
+{
+    // Set the terminal text color to yellow.
+    printf("\033[0;33m");
+
+    // This line displays the account name and number.
+    printf("Account Name: %s\n", account->account_name); // Prints the account name
+    printf("Account Number: %d\n", account->account_num); // Prints the account number
+
+    // This line displays the current balance of the account.
+    printf("Current Balance: %.2f\n", account->account_balance); // Prints the account balance with two decimal places
+
+    // This line displays the number of withdrawals and deposits made to the account.
+    printf("Number of Withdrawals: %d\n", account->num_Withdrawals); // Prints the number of withdrawals made
+    printf("Number of Deposits: %d\n", account->num_Deposits); // Prints the number of deposits made
+    printf("->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->\n"); // Prints a separator
+
+    // Set the terminal text color to purple.
+    printf("\033[0;35m "); 
+}
+
 // This function is called when the program is about to exit.
 static void exit_prog() 
 {
-    // The following line sets the color of the text to yellow.
-    printf("\033[0;33m"); 
+    // The following line sets the color of the text to purple.
+    printf("\033[0;35m "); 
     // The next few lines print out a message thanking the user for using the program and giving credit to the developers.
     printf("->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->\n\n");
     printf("\t\t\tThank you!\n");
