@@ -17,8 +17,9 @@ char get_char(char *prompt, char *limit)
 			strcpy(buffer, "");
             printf("\033[0;31m");
             printf("\n* Invalid input. Character limit is: %d\n\n", 1);
-            continue;
             printf("\033[0m");
+            continue;
+            
         }
         
         if(strlen(buffer) < 2)
@@ -26,8 +27,9 @@ char get_char(char *prompt, char *limit)
 			strcpy(buffer, "");
             printf("\033[0;31m");
             printf("\n* Invalid input. Please enter a character.\n\n");
-            continue;
             printf("\033[0m");
+            continue;
+            
         }
         
 		if(strspn(buffer, limit) != strlen(buffer))
@@ -35,8 +37,9 @@ char get_char(char *prompt, char *limit)
 			strcpy(buffer, "");
             printf("\033[0;31m");
             printf("\n* Invalid input. Prompt only accepts: %s\n", limit);
-            continue;
             printf("\033[0m");
+            continue;
+            
         }
 		
         return buffer[0];
@@ -58,8 +61,9 @@ int get_int(char *prompt, char *limit, int min, int max)
 			strcpy(buffer, "");
             printf("\033[0;31m");
             printf("\n* Invalid input. Prompt only accepts %s\n", limit);
-            continue;
             printf("\033[0m");
+            continue;
+            
         }
         
         if(sscanf(buffer, "%d", &user_input) != 1)
@@ -67,8 +71,9 @@ int get_int(char *prompt, char *limit, int min, int max)
             strcpy(buffer, "");
             printf("\033[0;31m");
             printf("\n* Invalid input. It must be a number.\n\n");
-            continue;
             printf("\033[0m");
+            continue;
+            
         }
         
         if(user_input < min || user_input > max) 
@@ -76,8 +81,9 @@ int get_int(char *prompt, char *limit, int min, int max)
             strcpy(buffer, "");
             printf("\033[0;31m");
             printf("\n* Invalid input. Please enter a number between %d and %d.\n", min, max);
-            continue;
             printf("\033[0m");
+            continue;
+            
         }
 		
         return user_input;
@@ -99,8 +105,9 @@ float get_float(char *prompt, char *limit, float min, float max)
 			strcpy(buffer, "");
             printf("\033[0;31m");
             printf("\n* Invalid input. Prompt only accepts %s\n", limit);
-            continue;
             printf("\033[0m");
+            continue;
+            
         }
         
         if(sscanf(buffer, "%f", &user_input) != 1)
@@ -108,8 +115,9 @@ float get_float(char *prompt, char *limit, float min, float max)
             strcpy(buffer, "");
             printf("\033[0;31m");
             printf("\n* Invalid input. It must be a number.\n\n");
-            continue;
             printf("\033[0m");
+            continue;
+            
         }
         
         if(user_input < min || user_input > max) 
@@ -117,8 +125,9 @@ float get_float(char *prompt, char *limit, float min, float max)
             strcpy(buffer, "");
             printf("\033[0;31m");
             printf("\n* Invalid input. Please enter a number between %.2f and %.2f.\n", min, max);
-            continue;
             printf("\033[0m");
+            continue;
+            
         }
 		
         return user_input;
@@ -140,8 +149,9 @@ double get_double(char *prompt, char *limit, double min, double max)
 			strcpy(buffer, "");
             printf("\033[0;31m");
             printf("\n* Invalid input. Prompt only accepts %s\n", limit);
-            continue;
             printf("\033[0m");
+            continue;
+            
         }
         
         if(sscanf(buffer, "%lf", &user_input) != 1)
@@ -149,8 +159,9 @@ double get_double(char *prompt, char *limit, double min, double max)
             strcpy(buffer, "");
             printf("\033[0;31m");
             printf("\n* Invalid input. It must be a number.\n\n");
-            continue;
             printf("\033[0m");
+            continue;
+            
         }
         
         if(user_input < min || user_input > max) 
@@ -158,8 +169,9 @@ double get_double(char *prompt, char *limit, double min, double max)
             strcpy(buffer, "");
             printf("\033[0;31m");
             printf("\n* Invalid input. Please enter a number between %.2f and %.2f.\n", min, max);
-            continue;
             printf("\033[0m");
+            continue;
+            
         }
 		
         return user_input;
@@ -180,8 +192,9 @@ int get_pin(char *prompt, char *limit, int min, int max)
 			strcpy(buffer, "");
             printf("\033[0;31m");
             printf("\n* Invalid input. Prompt only accepts %s\n", limit);
-            continue;
             printf("\033[0m");
+            continue;
+            
         }
         
         if(sscanf(buffer, "%d", &user_input) != 1)
@@ -189,8 +202,9 @@ int get_pin(char *prompt, char *limit, int min, int max)
             strcpy(buffer, "");
             printf("\033[0;31m");
             printf("\n* Invalid input. It must be numbers.\n\n");
-            continue;
             printf("\033[0m");
+            continue;
+            
         }
         
         if(user_input < min || user_input > max) 
@@ -198,8 +212,9 @@ int get_pin(char *prompt, char *limit, int min, int max)
             strcpy(buffer, "");
             printf("\033[0;31m");
             printf("\n* Invalid input. Please enter numbers between %d and %d.\n", min, max);
-            continue;
             printf("\033[0m");
+            continue;
+            
         }
 		
         return user_input;
