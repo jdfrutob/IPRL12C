@@ -66,8 +66,7 @@ static void account_Info(ATM *account);
 static void exit_prog();
 
 int main() {
-    // print purple text
-    printf("\033[0;35m ");
+
     // print welcome message
     printf("\n\t\t\t\tWelcome To MyATM\n");
     // call function to input PIN
@@ -108,7 +107,6 @@ static void input_Pin()
             selected_Account = &accounts[currentAccountIndex];
 
             // Print a welcome message to the console
-            printf("\033[0;33m");
             printf("\n\t\t\tWelcome, %s!\n", accounts[currentAccountIndex].account_name);
             printf("->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->\n");
 
@@ -156,7 +154,6 @@ static void selection_Menu()
             // If the user selects "Check Balance", show the balance
             case 1:
                 printf("->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->");
-                printf("\033[0;35m ");
                 printf("\n\t\t\tYou Have Chosen To Check Your Balance\n");
                 check_Balance();
                 break;
@@ -164,7 +161,6 @@ static void selection_Menu()
             // If the user selects "Deposit", prompt for the deposit amount and add it to the balance
             case 2:
                 printf("->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->");
-                printf("\033[0;33m");
                 printf("\n\t\t\tYou Have Chosen To Make a Deposit\n");
                 make_Deposit();
                 break;
@@ -172,7 +168,6 @@ static void selection_Menu()
            // If the user selects "Withdrawal", prompt for the withdrawal amount and subtract it from the balance
            case 3:
                 printf("->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->");
-                printf("\033[0;35m ");
                 printf("\n\t\t\tYou Have Chosen To Make a Withdrawal\n");
                 make_Withdrawal();
                 break;
@@ -180,7 +175,6 @@ static void selection_Menu()
             
             case 4:
                 printf("->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->");
-                printf("\033[0;33m");
                 printf("\n\t\t\tYou Have Chosen to Display Account Information\n");
                 account_Info(selected_Account);
                 break;
@@ -188,7 +182,6 @@ static void selection_Menu()
             // If the user selects "Logout or Change Account", prompt for the PIN and return to the login screen
             case 5:
                 printf("->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->");
-                printf("\033[0;33m");
                 system("cls");
                 printf("\n\t\t\tYou Have Chosen to Logout or Change Account\n");
                 input_Pin();
@@ -197,7 +190,6 @@ static void selection_Menu()
             // If the user selects "Exit Program", exit the program
             case 6:
                 printf("->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->");
-                printf("\033[0;33m");
                 printf("\n\t\t\tYou Have Chosen to Exit the Program.......\n");
                 exit_prog();
                 break;
@@ -214,8 +206,6 @@ static void selection_Menu()
 // This function checks the balance of the selected account and prints it to the console in a formatted way.
 static void check_Balance()
 {
-    // This line sets the color of the text to purple.
-    printf("\033[0;35m ");
 
     // This line prints the current balance of the selected account to the console.
     printf("\t\t\tCurrent Balance: %.2f\n\n", selected_Account->account_balance);
@@ -258,8 +248,6 @@ static void make_Withdrawal()
 // This function handles depositing money into the currently selected account.
 static void make_Deposit()
 {
-    // Set the terminal text color to yellow.
-    printf("\033[0;33m");
 
     // Get the amount of money to deposit from the user, ensuring it is a valid float within a given range.
     float amount = get_float("Enter Deposit Amount: ", "-1234567890.\n", -100000, 100000);
@@ -294,8 +282,6 @@ static void make_Deposit()
 // Define a function named account_Info that takes in a pointer named account of type ATM
 static void account_Info(ATM *account)
 {
-    // Set the terminal text color to yellow.
-    printf("\033[0;33m");
 
     // This line displays the account name and number.
     printf("Account Name: %s\n", account->account_name); // Prints the account name
@@ -309,15 +295,12 @@ static void account_Info(ATM *account)
     printf("Number of Deposits: %d\n", account->num_Deposits); // Prints the number of deposits made
     printf("->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->\n"); // Prints a separator
 
-    // Set the terminal text color to purple.
-    printf("\033[0;35m "); 
 }
 
 // This function is called when the program is about to exit.
 static void exit_prog() 
 {
-    // The following line sets the color of the text to purple.
-    printf("\033[0;35m "); 
+    
     // The next few lines print out a message thanking the user for using the program and giving credit to the developers.
     printf("->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->\n\n");
     printf("\t\t\tThank you!\n");
