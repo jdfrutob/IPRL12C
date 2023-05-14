@@ -107,7 +107,8 @@ static void input_Pin()
             selected_Account = &accounts[currentAccountIndex];
 
             // Print a welcome message to the console
-            printf("\n\t\t\tWelcome, %s!\n", accounts[currentAccountIndex].account_name);
+            printf("\n\t\t\tWelcome, %s!", accounts[currentAccountIndex].account_name);
+            printf("\n\t\t\tAvailable Balance, %.2f!\n", accounts[currentAccountIndex].account_balance);
             printf("->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->\n");
 
             // Call the selection_Menu function to display the account options
