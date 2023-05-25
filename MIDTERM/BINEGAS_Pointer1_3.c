@@ -115,7 +115,7 @@ void exercise_2()
     //Explain the result of the following statements:
     pd = &d;
     printf("Input a value: ");
-    scanf("%.2lf", &pd);
+    scanf("%lf", &d);
 
     //What is the value of "d" after executing scanf()?
     printf("\nThe value of d is %lf\n", d);
@@ -176,6 +176,7 @@ void exercise_3()
     add(pc, a, b);
     printf("Print add(%d, %d) = %d\n", a, b, *pc);
 }
+
 void exit_program() 
 { 
     printf("Thank you!\n");
