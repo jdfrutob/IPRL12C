@@ -139,27 +139,27 @@ void exercise_3()
     printf("The following function returns the sum of two integers:\n\n");
 
     printf("int sum(int a, int b)\n ");
-    printf("\t {\n");
+    printf("{\n");
     printf("\t int c; \n");
     printf("\t c = a + b; \n");
     printf("\t return c; \n");
-    printf("\t }\n\n");
+    printf("}\n\n");
 
 
     printf("The following does the same, except that a pointer is being used to store the sum.\n\n");
    
 
     printf("void add(int *pc, int a, int b)\n");
-    printf("\t {\n");
+    printf("{\n");
     printf("\t *pc = a + b; \n");
-    printf("\t }\n\n");
+    printf("}\n\n");
     
 
     printf("Which do you think is better?  Why?\n");
     printf("Both have different advantages namely :\n");
     printf("The first function is more concise and easier to understand. \n");
     printf("The second function is useful \n");
-    printf("if you want to modify the value of a pointer from within a function.\n");
+    printf("if you want to modify the value of a pointer from within a function.\n\n");
 
     // Give an example on how to call the function sum().
     printf("Function sum(int a, int b)\n");
@@ -171,8 +171,6 @@ void exercise_3()
 
     //Give an example of how to call the function add()
     printf("Function add(int *pc, int a, int b)\n");
-    int a = 5;
-    int b = 6;
     int *pc;
 
     add(pc, a, b);
