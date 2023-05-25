@@ -115,7 +115,7 @@ void exercise_2()
     //Explain the result of the following statements:
     pd = &d;
     printf("Input a value: ");
-    scanf("%lf", &pd);
+    scanf("%.2lf", &pd);
 
     //What is the value of "d" after executing scanf()?
     printf("\nThe value of d is %lf\n", d);
