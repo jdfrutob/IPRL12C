@@ -35,5 +35,6 @@ void Print_Salary()
 int main ()
 {
     Print_Student_Accounts();
+    printf("\n\n\n");
     Print_Salary();
 }
