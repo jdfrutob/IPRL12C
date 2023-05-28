@@ -11,15 +11,29 @@ Student_Accounts students []= {
     {"Bermard Velez","2022-1-0154","1st Year"}
 };
 
+
+
+void Print_Student_Accounts() 
+{
+    for (int i = 0; i < 2; i++) 
+        printf("%s %s %s\n", students[i].student_name, students[i].student_number, students[i].Year_Level);
+}
+ 
+void Print_Salary()
+{
+    float salary;
+    float *psalary;
+
+    salary = 5000;
+    psalary = &salary;
+
+    printf("Enter Salary: ");
+    scanf("%f\n",psalary);
+
+    printf("Salary: %f",*psalary);
+}
 int main ()
 {
-    printf("Student Record 1 Name: %s\n",students[0].student_name);
-    printf("Student Record 1 Student Number: %s\n",students[0].student_number);
-    printf("Student Record 1 Year Level: %s\n\n",students[0].Year_Level);
-
-
-    printf("Student Record 2 Name: %s\n",students[1].student_name);
-    printf("Student Record 2 Student Number: %s\n",students[1].student_number);
-    printf("Student Record 2 Year Level: %s\n\n",students[1].Year_Level);
-
+    Print_Student_Accounts();
+    Print_Salary();
 }
