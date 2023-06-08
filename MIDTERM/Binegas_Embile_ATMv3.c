@@ -147,7 +147,7 @@ static void selection_Menu()
             printf("[%d] %s\n", i + 1, Menu[i]);
 
         // Get the user's selection from the menu
-        int usersel = get_int("Select from the menu above: ","12345\n",1,5);
+        int usersel = get_int("Select from the menu above: ","123456\n",1,6);
 
         // Process the user's selection
         switch (usersel)
