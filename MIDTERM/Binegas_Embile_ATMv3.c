@@ -309,7 +309,6 @@ static void exit_prog()
     printf("\t\t\tAnd Lance Embile\n");
     printf("\t\t\tvaldez.h ft: Marc Valdez\n");
     printf("\t\t\tGIVEEEEE VIRTUALLLL CLAPPPPPPP!!!!!!\n");
-    // The last few lines reset the text color to its default and exits the program.
     printf("\n->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->");
     exit(0);
 }
