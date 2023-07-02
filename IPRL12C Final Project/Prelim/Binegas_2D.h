@@ -4,21 +4,21 @@
 #define rows 2
 #define cols 3
 void menu (char* Exercises[], int size);
-void exer_1();
-void exer_2();
-void exer_3();
-void exer_4();
-void exer_5();
-void exer_6();
-void exer_7();
-void exer_8();
+void twoDexer_1();
+void twoDexer_2();
+void twoDexer_3();
+void twoDexer_4();
+void twoDexer_5();
+void twoDexer_6();
+void twoDexer_7();
+void twoDexer_8();
 void exit_prog();
 
 // This is the main function where the program begins
-int main()
+int twoDmain()
 {
     // Print a message to the console to indicate that we are running Binegas 2D Array Exercises
-    printf("Binegas 1D Array Exercises:\n");
+    printf("Binegas 2D Array Exercises:\n");
 
     // Declare and initialize an array of strings named Exercises
     char* Exercises[] =
@@ -31,7 +31,6 @@ int main()
         "Exercise 6",
         "Exercise 7",
         "Exercise 8",
-        "Exercise 9",
         "Exit Program"
     };
 
@@ -107,7 +106,7 @@ int main()
     }
 
     // Call the main function again to restart the program
-    main();
+    twoDmain();
 }
 
 void menu(char* Exercises[], int size)
@@ -129,9 +128,9 @@ void intitializeto_0(double a[rows][cols])
 	}
 }
 //Write a function that will initialize the contents of a double data type 2D array to 0.0. Pass the array as parameter.
-void exer_1()
+void twoDexer_1()
 {
-	printf("Binegas 1D Array Act#1\n\n");
+	printf("Binegas 2D Array Act#1\n\n");
 	double a [rows][cols];
 	intitializeto_0(a);
 	printf("\n");
@@ -155,9 +154,9 @@ void userinput(double a[rows][cols])
 	}
 }
 //Same as the problem above, but allow the user to input the value of the array element via scanf() statement.
-void exer_2()
+void twoDexer_2()
 {
-	printf("Binegas 1D Array Act#2\n\n");
+	printf("Binegas 2D Array Act#2\n\n");
 	double a [rows][cols];
 	userinput(a);
 	printf("\n");
@@ -174,7 +173,7 @@ void printaelm(int A[5][3])
 //Write a function that will display all the elements of the 2D array. Elements should be printed starting from the 
 //first row up to the last row, and from the first column to the last column within the same row. Elements of the 
 //same row should be printed on the same line separated by two spaces. Pass the array as parameter.
-void exer_3()
+void twoDexer_3()
 {
 	printf("Binegas 2D Array Act#3\n\n");
 	int A[5][3] = {{-2, -4, -6}, {-8, 10, 12}, {14, 16, 18}, {20, 22, 24}, {26, 28, 30}};
@@ -195,7 +194,7 @@ int countnegelm(int A[5][3])
    
     return count;
 }
-void exer_4()
+void twoDexer_4()
 {
     printf("Binegas 2D Array Act#4\n\n");
     printf("Ref Array\n");
@@ -228,7 +227,7 @@ void maindiag(int A [rows][cols])
 	}
 }
 //Write a function that will print only the elements on the main diagonal of the 2D array. Pass the array as parameter.
-void exer_5()
+void twoDexer_5()
 {
 	printf("Binegas 2D Array Act#5\n\n");
 	printf("Ref Array\n");
@@ -267,7 +266,7 @@ void sumrow (int A[5][3])
 	}
 }
 // Write a function that will return the sum of the elements on a specified row. Pass the array and the row as parameters
-void exer_6()
+void twoDexer_6()
 {
     printf("Binegas 2D Array Act#6\n\n");
 	int A[5][3] = {{-2, -4, -6}, {-8, 10, 12}, {-3, -7, -9}, {20, 22, 24}, {26, 28, 30}};
@@ -298,7 +297,7 @@ void sumcol (int A[5][3])
     
 }
 //Write a function that will return the sum of the elements on a specified column. Pass the array and the column as parameters.
-void exer_7()
+void twoDexer_7()
 {
     printf("Binegas 2D Array Act#7\n\n");
     int A[5][3] = {{-2, -4, -6}, {-8, 10, 12}, {-3, -7, -9}, {20, 22, 24}, {26, 28, 30}};
@@ -335,7 +334,7 @@ void matrixsum(int A[rows][cols],int B[rows][cols],int C[rows][cols])
 }
 //assume three matrices of the same size, say matrix A, B and C.
 //Write a function that will add the two matrices A and B and store the sum to C.
-void exer_8()
+void twoDexer_8()
 {
     printf("Binegas 2D Array Act#8\n\n");
     int A[rows][cols] = {{5, 10, 15}, {2, 4, 6}};
@@ -343,7 +342,7 @@ void exer_8()
     int C[rows][cols];
     matrixsum(A,B,C);
 }
-void exit_prog()
+void twoDexit_prog()
 {
     printf("Thankyouu\n");
     printf("Made by John Daniel Binegas\n");
