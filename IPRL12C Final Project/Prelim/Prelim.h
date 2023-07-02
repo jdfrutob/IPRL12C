@@ -1,5 +1,9 @@
-#include ".\LRT\Binegas_Valdez_LRTSYS.h"
+#include ".\Prelim\Binegas_1D.h"
 #include ".\Prelim\Binegas_2D.h"
+#include ".\Prelim\Binegas_ME.h"
+#include ".\LRT\Binegas_Valdez_LRTSYS.h"
+
+void Prelim_exit_prog()
 
 int prelim_main()
 {
@@ -14,7 +18,7 @@ void Prelim_Menu()
     // Define the options for exercises.
     char* prelim_options[] =
     {
-        "1d Array Exercises",
+        "1D Array Exercises",
         "2D Array Exercises",
         "LRT System",
         "Exit Program"
@@ -59,19 +63,35 @@ void Prelim_Menu()
 
             case 3:
                 system("cls");
+                printf("\nYou Have Chosen Prelim Machine Exercises\n\n"); 
+                Me_main();
+                printf("\n");
+                break;
+            case 4:
+                system("cls");
                 printf("\nYou Have Chosen LRT System\n\n");
                 lrt_main();
                 printf("\n");
                 break;
 
-            case 10:
+            case 5:
                 system("cls");
                 printf("\nYou Have Chosen to Exit the Program.......\n");
-                exit_program();
+                Prelim_exit_program();
                 break;
 
             default:
                 break;
         }
     } 
+    return 0;
+}
+void Prelim_exit_prog()
+{
+    printf("Thankyouu\n");
+    printf("Made by John Daniel Binegas\n");
+    printf("valdez.h ft:Marc Valdez\n");
+    printf("GIVEEEEE VIRTUALLLL CLAPPPPPPP!!!!!!\n\n");
+
+    exit (0);
 }
