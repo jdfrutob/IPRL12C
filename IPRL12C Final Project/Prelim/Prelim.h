@@ -1,16 +1,15 @@
-#include ".\Prelim\Binegas_1D.h"
-#include ".\Prelim\Binegas_2D.h"
-#include ".\Prelim\Binegas_ME.h"
+#include ".\1D\Binegas_1D.h"
+#include ".\2D\Binegas_2D.h"
+#include ".\ME\Binegas_ME.h"
 #include ".\LRT\Binegas_Valdez_LRTSYS.h"
 
-void Prelim_exit_prog()
+void Prelim_exit_prog();
 
-int prelim_main()
+void prelim_main()
 {
     printf("\nBinegas Prelim Activities:\n\n");
     Prelim_Menu();
     printf("\n");
-    return 0;
 }
 
 void Prelim_Menu()
@@ -21,6 +20,7 @@ void Prelim_Menu()
         "1D Array Exercises",
         "2D Array Exercises",
         "LRT System",
+        "ME",
         "Exit Program"
     };
 
@@ -64,7 +64,7 @@ void Prelim_Menu()
             case 3:
                 system("cls");
                 printf("\nYou Have Chosen Prelim Machine Exercises\n\n"); 
-                Me_main();
+                ME_main();
                 printf("\n");
                 break;
             case 4:

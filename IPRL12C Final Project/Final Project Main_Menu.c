@@ -48,7 +48,7 @@ void Main_Menu()
             case 1:
                 system("cls");
                 printf("\nYou Have Chosen Prelim Activities\n\n");
-                prelim();
+                prelim_main();
                 printf("\n");
                 break;
 

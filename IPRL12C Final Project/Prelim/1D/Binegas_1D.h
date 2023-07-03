@@ -1,7 +1,3 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include "valdez.h"
-
 void menu (char* Exercises[], int size);
 void oneDexer_1();
 void oneDexer_2();

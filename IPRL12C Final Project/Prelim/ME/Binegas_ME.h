@@ -1,7 +1,3 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include "valdez.h"
-
 void ME_menu();
 void MExercise_1();
 void MExercise_2();

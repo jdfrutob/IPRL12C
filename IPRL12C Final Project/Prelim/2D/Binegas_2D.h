@@ -1,6 +1,3 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include "valdez.h"
 #define rows 2
 #define cols 3
 void twoDmenu (char* Exercises[], int size);
