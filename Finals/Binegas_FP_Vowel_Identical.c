@@ -81,7 +81,8 @@ int countVowels(FILE *file)
     int vowelCount = 0;
     char ch;
 
-    while ((ch = fgetc(file)) != EOF) {
+    while ((ch = fgetc(file)) != EOF) 
+    {
         if (isVowel(ch)) {
             vowelCount++;
         }
@@ -161,11 +162,10 @@ void exercise_2() {
     printf("Enter the second filepath: ");
     scanf("%99s", filepath2);
 
-    if (areFilesIdentical(filepath1, filepath2)) {
+    if (areFilesIdentical(filepath1, filepath2)) 
         printf("The files \"%s\" and \"%s\" are identical.\n", filepath1, filepath2);
-    } else {
+    else
         printf("The files \"%s\" and \"%s\" are not identical.\n", filepath1, filepath2);
-    }
 }
 
 void exit_program()
