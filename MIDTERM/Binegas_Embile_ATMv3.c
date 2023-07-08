@@ -16,7 +16,7 @@ typedef struct ATM_Struct
     int account_num;
 
     // This field stores the user's account name.
-    char *account_name;
+    char account_name[100];
 
     // This field stores the user's account balance.
     float account_balance;
@@ -29,20 +29,15 @@ typedef struct ATM_Struct
 
 } ATM;
 
-// This is an array of structures that represents ATM accounts.
-// In this specific order : PIN number, Account number, Name, Initial Balance of 5000 Pesos,Number of withdrawals,Number of deposits.
-ATM accounts[] = {
-    {1225,0001,"Binegas, John Daniel",initial_balance,0,0},
-    {2512,0002,"Dineros, Trisha Anne",initial_balance,0,0},
-    {0123,0003,"Bautista, Glen Angelo",initial_balance,0,0},
-    {5555,0004,"Alastoy, John Nelson",initial_balance,0,0},
-    {0000,0005,"Embile, Lance Raphael",initial_balance,0,0},
-    {1234,0006,"Valdez, Marc Joshua",initial_balance,0,0}
-};
 
 // Declare a pointer variable named 'selected_Account' of type 'ATM' and initialize it to NULL.
 // This variable will be used to store the currently selected account for the user.
 ATM *selected_Account = NULL;
+
+ATM accounts [100];
+
+int accounts_size = 0;
+
 
 // This section defines the function input_Pin
 static void input_Pin();
@@ -62,15 +57,21 @@ static void make_Deposit();
 // This function displays the balance and transaction counts for a given account.
 static void account_Info(ATM *account);
 
+static void saveAccounts();
+
+static void loadAccounts();
+
 // This section defines the function exit_prog
 static void exit_prog();
 
 int main() {
-
+    
+    loadAccounts();
     // print welcome message
     printf("\n\t\t\t\tWelcome To MyATM\n");
     // call function to input PIN
     input_Pin();
+
 }
 // This function handles the input of the user's PIN number
 static void input_Pin()
@@ -164,6 +165,7 @@ static void selection_Menu()
                 printf("->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->");
                 printf("\n\t\t\tYou Have Chosen To Make a Deposit\n");
                 make_Deposit();
+                saveAccounts();
                 break;
 
            // If the user selects "Withdrawal", prompt for the withdrawal amount and subtract it from the balance
@@ -171,6 +173,7 @@ static void selection_Menu()
                 printf("->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->");
                 printf("\n\t\t\tYou Have Chosen To Make a Withdrawal\n");
                 make_Withdrawal();
+                saveAccounts();
                 break;
 
             
@@ -296,6 +299,25 @@ static void account_Info(ATM *account)
     printf("Number of Deposits: %d\n", account->num_Deposits); // Prints the number of deposits made
     printf("->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->\n"); // Prints a separator
 
+}
+static void saveAccounts() { //saves the account by writing to the accounts.dat file
+    FILE* file = fopen("accounts.dat", "wb");
+    if (file == NULL) {
+        printf("Error: Unable to save accounts.\n");
+		return;
+    }
+    fwrite(accounts, sizeof(ATM ), accounts_size, file);
+    fclose(file);
+}
+
+static void loadAccounts() { //loads the account by reading the accounts.dat file
+    FILE* file = fopen("accounts.dat", "rb");
+    if (file == NULL) {
+        printf("Error: Unable to load accounts.\n");
+        return;
+    }
+    accounts_size = fread(accounts, sizeof(ATM), 100, file);
+    fclose(file); 
 }
 
 // This function is called when the program is about to exit.
