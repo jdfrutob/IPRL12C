@@ -3,9 +3,8 @@
 #include ".\ME\Binegas_ME.h"
 #include ".\LRT\Binegas_Valdez_LRTSYS.h"
 
-void Prelim_exit_prog();
 
-void prelim_main()
+void Prelim_main()
 {
     printf("\nBinegas Prelim Activities:\n\n");
     Prelim_Menu();

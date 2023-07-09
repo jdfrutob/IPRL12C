@@ -1,7 +1,11 @@
 #include "valdez.h"
+#include "valdez_v4.h"
 #include ".\Prelim\Prelim.h"
+#include ".\Midterm\Midterm.h"
+#include ".\Finals\Finals.h"
 
-void display_menu();
+
+void Main_Menu();
 void exit_program();
 
 int main()
@@ -48,21 +52,21 @@ void Main_Menu()
             case 1:
                 system("cls");
                 printf("\nYou Have Chosen Prelim Activities\n\n");
-                prelim_main();
+                Prelim_main();
                 printf("\n");
                 break;
 
             case 2:
                 system("cls");
                 printf("\nYou Have Chosen Midterm Actiities\n\n"); 
-                midterm();
+                Midterm_main();
                 printf("\n");
                 break;
 
             case 3:
                 system("cls");
                 printf("\nYou Have Chosen Finals Activities\n\n");
-                finals();
+                Finals_main();
                 printf("\n");
                 break;
 
