@@ -15,6 +15,7 @@ int Pointers_Samples_main()
     printf("\nBinegas Pointers Exercises:\n\n");
     PS_menu();
     printf("\n");
+    return 0;
 }
 
 void PS_menu()
@@ -52,7 +53,7 @@ void PS_menu()
         }
 
         // Get the user's choice of exercise.
-        int selected_PSexercise = get_int("\nPlease choose an option : ", "1234567890\n", 1, num_PSexercise_options);
+        int selected_PSexercise = get_int(1, num_PSexercise_options,"\nPlease choose an option : ");
 
         // Execute the selected exercise.
         switch (selected_PSexercise)
@@ -88,7 +89,7 @@ void PS_menu()
             case 5:
                 system("cls");
                 printf("\nYou Have Chosen Exercise 5\n\n");
-                exercise_5();
+                PS_5();
                 printf("\n");
                 break;
 

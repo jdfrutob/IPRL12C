@@ -1,8 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include "valdez.h"
-
-// Final
 
 // This line creates a constant value named `initial_balance`
 #define initial_balance 5000.00
@@ -44,7 +39,7 @@ int accounts_size = 0;
 static void input_Pin();
 
 // This section defines the function selection_Menu
-static void selection_Menu();
+static void ATM_selection_Menu();
 
 // This section defines the function check_Balance
 static void check_Balance();
@@ -63,7 +58,7 @@ static void saveAccounts();
 static void loadAccounts();
 
 // This section defines the function exit_prog
-static void exit_prog();
+static void ATM_exit_prog();
 
 int ATM_main() {
     
@@ -72,7 +67,7 @@ int ATM_main() {
     printf("\n\t\t\t\tWelcome To MyATM\n");
     // call function to input PIN
     input_Pin();
-
+    return 0;
 
 }
 // This function handles the input of the user's PIN number
@@ -85,7 +80,7 @@ static void input_Pin()
     while (1)
     {
         // Get the user's input for the PIN number and validate it
-        int pin_number = get_pin("Enter Pin Number : ", "1234567890\n", 0000, 9999);
+        int pin_number = get_int( 0, 9999,"Enter Pin Number : ");
 
         // Initialize variables for tracking whether the PIN was found and its index
         int found = 0;
@@ -150,7 +145,7 @@ static void  ATM_selection_Menu()
             printf("[%d] %s\n", i + 1, Menu[i]);
 
         // Get the user's selection from the menu
-        int usersel = get_int("Select from the menu above: ","123456\n",1,6);
+        int usersel = get_int(1,6,"Select from the menu above: ");
 
         // Process the user's selection
         switch (usersel)
@@ -197,7 +192,7 @@ static void  ATM_selection_Menu()
             case 6:
                 printf("->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->");
                 printf("\n\t\t\tYou Have Chosen to Exit the Program.......\n");
-                exit_prog();
+                ATM_exit_prog();
                 break;
 
             // If the user selects an invalid option, notify them and prompt for another selection
@@ -224,7 +219,7 @@ static void check_Balance()
 static void make_Withdrawal()
 {
     // This line prompts the user to enter the amount they want to withdraw and verifies that the input is valid.
-    float amount = get_float("Enter Withdrawal Amount: ","-1234567890.\n",-100000,100000);
+    float amount = get_float(-100000,100000,"Enter Withdrawal Amount: ");
 
     // If the amount entered is less than or equal to zero, print an error message to the console.
     if (amount <= 0)
@@ -256,7 +251,7 @@ static void make_Deposit()
 {
 
     // Get the amount of money to deposit from the user, ensuring it is a valid float within a given range.
-    float amount = get_float("Enter Deposit Amount: ", "-1234567890.\n", -100000, 100000);
+    float amount = get_float(-100000, 100000,"Enter Deposit Amount: ");
 
     // If the amount to deposit is greater than zero:
     if (amount > 0)

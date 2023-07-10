@@ -33,9 +33,7 @@ void Struct_menu()
             printf("[%d] %s\n", i + 1, S_exercises[i]);
         }
 
-        int selected_Sexercise = 0;
-        printf("Pick an Exercise: ");
-        scanf("%d", &selected_Sexercise);
+        int selected_Sexercise = get_int(1, num_Sexercise_options, "\nPlease choose an option : ");
 
         switch (selected_Sexercise)
         {

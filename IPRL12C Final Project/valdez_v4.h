@@ -6,7 +6,7 @@
 #include <ctype.h>
 #include <limits.h>
 
-#define MAX 100
+#define MAX 256
 
 /*
  This header file utilizes ANSI escape codes to color the output.
@@ -91,7 +91,7 @@ int get_int(const int min, const int max, const char *va_prompt, ...)
 
     va_list args;
     va_start(args, va_prompt);
-    vsprintf_s(prompt, strlen(va_prompt) + 1, va_prompt, args);
+    vsprintf(prompt, va_prompt, args);
     va_end(args);
 
     char buffer[MAX];
@@ -109,20 +109,20 @@ int get_int(const int min, const int max, const char *va_prompt, ...)
             continue;
 
         int user_input;
-        if(sscanf_s(buffer, "%d", &user_input) != 1)
+        if(sscanf(buffer, "%d", &user_input) != 1)
         {
             cprintf(RED, "  ! Invalid input. Please enter a numeric value.\n");
             continue;
         }
 
         char remaining[MAX];
-        if(sscanf_s(buffer, "%f%s", (float *)&user_input, remaining) != 1)
+        if(sscanf(buffer, "%f%s", (float *)&user_input, remaining) != 1)
         {
             cprintf(RED, "  ! Invalid input. Please refrain from using non-numeric characters.\n");
             continue;
         }
 
-        if(sscanf_s(buffer, "%d%[.]%s", &user_input, remaining, remaining) != 1)
+        if(sscanf(buffer, "%d%[.]%s", &user_input, remaining, remaining) != 1)
         {
             cprintf(YELLOW, "  ! Invalid input. Please enter a whole number.\n");
             continue;
@@ -144,7 +144,7 @@ float get_float(const float min, const float max, const char *va_prompt, ...)
 
     va_list args;
     va_start(args, va_prompt);
-    vsprintf_s(prompt, strlen(va_prompt) + 1, va_prompt, args);
+    vsprintf(prompt, va_prompt, args);
     va_end(args);
 
     char buffer[MAX];
@@ -162,14 +162,14 @@ float get_float(const float min, const float max, const char *va_prompt, ...)
             continue;
 
         float user_input;
-        if(sscanf_s(buffer, "%f", &user_input) != 1)
+        if(sscanf(buffer, "%f", &user_input) != 1)
         {
             cprintf(RED, "  ! Invalid input. Please enter a numeric value.\n");
             continue;
         }
 
         char remaining[MAX];
-        if(sscanf_s(buffer, "%f%s", &user_input, remaining) != 1)
+        if(sscanf(buffer, "%f%s", &user_input, remaining) != 1)
         {
             cprintf(YELLOW, "  ! Invalid input. Please enter a whole number.\n");
             continue;
@@ -191,7 +191,7 @@ double get_double(const double min, const double max, const char *va_prompt, ...
 
     va_list args;
     va_start(args, va_prompt);
-    vsprintf_s(prompt, strlen(va_prompt) + 1, va_prompt, args);
+    vsprintf(prompt, va_prompt, args);
     va_end(args);
 
     char buffer[MAX];
@@ -209,14 +209,14 @@ double get_double(const double min, const double max, const char *va_prompt, ...
             continue;
 
         double user_input;
-        if(sscanf_s(buffer, "%lf", &user_input) != 1)
+        if(sscanf(buffer, "%lf", &user_input) != 1)
         {
             cprintf(RED, "  ! Invalid input. Please enter a numeric value.\n");
             continue;
         }
 
         char remaining[MAX];
-        if(sscanf_s(buffer, "%lf%s", &user_input, remaining) != 1)
+        if(sscanf(buffer, "%lf%s", &user_input, remaining) != 1)
         {
             cprintf(YELLOW, "  ! Invalid input. Please enter a whole number.\n");
             continue;
@@ -238,7 +238,7 @@ void get_string(char *user_input, const int limit, const char *va_prompt, ...)
 
     va_list args;
     va_start(args, va_prompt);
-    vsprintf_s(prompt, strlen(va_prompt) + 1, va_prompt, args);
+    vsprintf(prompt, va_prompt, args);
     va_end(args);
 
     char buffer[MAX];
@@ -255,7 +255,7 @@ void get_string(char *user_input, const int limit, const char *va_prompt, ...)
         if(starts_or_ends_with_dot(buffer))
             continue;
 
-        if(sscanf_s(buffer, "%s", user_input) != 1)
+        if(sscanf(buffer, "%s", user_input) != 1)
         {
             cprintf(YELLOW, "  ! Invalid input. Please enter a string of characters.\n");
             continue;
@@ -310,32 +310,7 @@ void exit_prompt(const char *prompt)
  The simple act of concatenating two strings becomes extremely complicated once buffer overflow is considered.
  The user input is case sensitive.
 */
-FILE *open_file(const char *prompt, const char *extension)
-{
-    char filename[MAX];
-    get_string(filename, MAX, prompt);
 
-    // Concatenate filename and extension using strncat_s
-    size_t filename_length = strlen(filename);
-    size_t extension_length = strlen(extension);
-    size_t remaining_space = sizeof(filename) - filename_length - 1;
-    size_t copy_length = remaining_space > extension_length ? extension_length : remaining_space;
-    if(strncat_s(filename, sizeof(filename), extension, copy_length) != 0) {
-        // Handle buffer overflow or truncation error
-        printf("Error: Filename buffer overflow or truncation occurred.\n");
-        return NULL;
-    }
-
-    // Open the file
-    FILE *fp;
-    errno_t err = fopen_s(&fp, filename, "r");
-    if(err != 0) {
-        // Handle file opening error
-        printf("Error opening file: %s\n", filename);
-        return NULL;
-    }
-    return fp;
-}
 
 void print_menu(char *menu_items[], const int menu_size)
 {

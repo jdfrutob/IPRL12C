@@ -1,4 +1,3 @@
-#include "valdez.h"
 #include "valdez_v4.h"
 #include ".\Prelim\Prelim.h"
 #include ".\Midterm\Midterm.h"
@@ -10,9 +9,10 @@ void exit_program();
 
 int main()
 {
-    printf("\nBinegas Final Project:\n\n");
+    printf("\nBinegas Final Project (Compilation):\n\n");
     Main_Menu();
     printf("\n");
+    return 0;
 }
 
 void Main_Menu()
@@ -44,7 +44,7 @@ void Main_Menu()
         }
 
         // Get the user's choice of exercise.
-        int selected_exercise = get_int("\nPlease choose an option : ", "1234567890\n", 1, num_exercise_options);
+        int selected_exercise = get_int(1, num_exercise_options, "\nPlease choose an option : ");
 
         // Execute the selected exercise.
         switch (selected_exercise)

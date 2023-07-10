@@ -9,6 +9,7 @@ int PMes_main()
     printf("\nBinegas Pointers Exercises:\n\n");
     PMes_display_menu();
     printf("\n");
+    return 0;
 }
 
 void PMes_display_menu()
@@ -40,7 +41,7 @@ void PMes_display_menu()
         }
 
         // Get the user's choice of exercise.
-        int PMes_selected_exercise = get_int("\nPlease choose an option : ", "1234567890\n", 1, PMes_num_exercise_options);
+        int PMes_selected_exercise = get_int(1, PMes_num_exercise_options,"\nPlease choose an option : ");
 
         // Execute the selected exercise.
         switch (PMes_selected_exercise)
@@ -69,7 +70,7 @@ void PMes_display_menu()
             case 4:
                 system("cls");
                 printf("\nYou Have Chosen to Exit the Program.......\n");
-                exit_program();
+                PMes_exit_program();
                 break;
 
             default:

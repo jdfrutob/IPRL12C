@@ -11,109 +11,6 @@ void twoDexer_7();
 void twoDexer_8();
 void twoDexit_prog();
 
-// This is the main function where the program begins
-int twoDmain()
-{
-    // Print a message to the console to indicate that we are running Binegas 2D Array Exercises
-    printf("Binegas 2D Array Exercises:\n");
-
-    // Declare and initialize an array of strings named Exercises
-    char* Exercises[] =
-    {
-        "Exercise 1",
-        "Exercise 2",
-        "Exercise 3",
-        "Exercise 4",
-        "Exercise 5",
-        "Exercise 6",
-        "Exercise 7",
-        "Exercise 8",
-        "Exit Program"
-    };
-
-    // Determine the number of exercises in the array
-    int numExercises = sizeof(Exercises)/sizeof(Exercises[0]); 
-
-    // Call the menu function and pass in the Exercises array and the number of exercises
-    menu(Exercises,numExercises);
-
-    // Get an integer value from the user between 1 and 9
-    int usersel = get_int("Pick an Exercise: ","123456789\n",1,9);
-
-    // Use a switch statement to determine which exercise the user selected
-    switch (usersel)
-    {
-        // If the user selected twoDexercise 1, run twoDexer_1 function and print a message to the console
-        case 1:
-            system("cls");
-            printf("You Have Chosen 2D Exercise 1\n\n");
-            twoDexer_1();
-            break;
-
-        // If the user selected twoDexercise 2, run twoDexer_2 function and print a message to the console
-        case 2:
-            system("cls");
-            printf("You Have Chosen 2D Exercise 2\n\n"); 
-            twoDexer_2();
-            break;
-
-        // If the user selected twoDexercise 3, run twoDexer_3 function and print a message to the console
-        case 3:
-            system("cls");
-            printf("You Have Chosen 2D Exercise 3\n\n");
-            twoDexer_3();
-            break;
-
-        // If the user selected twoDexercise 4, run twoDexer_4 function and print a message to the console
-        case 4:
-            system("cls");
-            printf("You Have Chosen 2D Exercise 4\n\n");
-            twoDexer_4();
-            break;
-
-        // If the user selected twoDexercise 5, run twoDexer_5 function and print a message to the console
-        case 5:
-            system("cls");
-            printf("You Have Chosen 2D Exercise 5\n\n");
-            twoDexer_5();
-            break;
-
-        // If the user selected twoDexercise 6, run twoDexer_6 function and print a message to the console
-        case 6:
-            system("cls");
-            printf("You Have Chosen 2D Exercise 6\n\n");
-            twoDexer_6();
-            break;
-
-        // If the user selected twoDexercise 7, run twoDexer_7 function and print a message to the console
-        case 7:
-            system("cls");
-            printf("You Have Chosen 2D Exercise 7\n\n");
-            twoDexer_7();
-            break;
-
-        // If the user selected twoDexercise 8, run twoDexer_8 function and print a message to the console
-        case 8:
-            system("cls");
-            printf("You Have Chosen 2D Exercise 8\n\n");
-            twoDexer_8();
-            break;
-
-        // If the user selected Exit Program, run the exit_prog function and print a message to the console
-        case 9:
-            system("cls");
-            printf("You Have Chosen to Exit the Program.......\n\n");
-            twoDexit_prog();
-            break;
-
-        // If the user selected something other than 1-9, do nothing and continue the loop
-        default:
-            break;
-    }
-
-    // Call the main function again to restart the program
-    twoDmain();
-}
 
 void twoDmenu(char* Exercises[], int size)
 {
@@ -356,4 +253,106 @@ void twoDexit_prog()
     printf("GIVEEEEE VIRTUALLLL CLAPPPPPPP!!!!!!\n\n");
 
     exit (0);
+}
+int twoDmain()
+{
+    // Print a message to the console to indicate that we are running Binegas 2D Array Exercises
+    printf("Binegas 2D Array Exercises:\n");
+
+    // Declare and initialize an array of strings named Exercises
+    char* Exercises[] =
+    {
+        "Exercise 1",
+        "Exercise 2",
+        "Exercise 3",
+        "Exercise 4",
+        "Exercise 5",
+        "Exercise 6",
+        "Exercise 7",
+        "Exercise 8",
+        "Exit Program"
+    };
+
+    // Determine the number of exercises in the array
+    int numExercises = sizeof(Exercises)/sizeof(Exercises[0]); 
+
+    // Call the menu function and pass in the Exercises array and the number of exercises
+    twoDmenu(Exercises,numExercises);
+
+    // Get an integer value from the user between 1 and 9
+    int usersel = get_int(1,9,"Pick an Exercise: ");
+
+    // Use a switch statement to determine which exercise the user selected
+    switch (usersel)
+    {
+        // If the user selected twoDexercise 1, run twoDexer_1 function and print a message to the console
+        case 1:
+            system("cls");
+            printf("You Have Chosen 2D Exercise 1\n\n");
+            twoDexer_1();
+            break;
+
+        // If the user selected twoDexercise 2, run twoDexer_2 function and print a message to the console
+        case 2:
+            system("cls");
+            printf("You Have Chosen 2D Exercise 2\n\n"); 
+            twoDexer_2();
+            break;
+
+        // If the user selected twoDexercise 3, run twoDexer_3 function and print a message to the console
+        case 3:
+            system("cls");
+            printf("You Have Chosen 2D Exercise 3\n\n");
+            twoDexer_3();
+            break;
+
+        // If the user selected twoDexercise 4, run twoDexer_4 function and print a message to the console
+        case 4:
+            system("cls");
+            printf("You Have Chosen 2D Exercise 4\n\n");
+            twoDexer_4();
+            break;
+
+        // If the user selected twoDexercise 5, run twoDexer_5 function and print a message to the console
+        case 5:
+            system("cls");
+            printf("You Have Chosen 2D Exercise 5\n\n");
+            twoDexer_5();
+            break;
+
+        // If the user selected twoDexercise 6, run twoDexer_6 function and print a message to the console
+        case 6:
+            system("cls");
+            printf("You Have Chosen 2D Exercise 6\n\n");
+            twoDexer_6();
+            break;
+
+        // If the user selected twoDexercise 7, run twoDexer_7 function and print a message to the console
+        case 7:
+            system("cls");
+            printf("You Have Chosen 2D Exercise 7\n\n");
+            twoDexer_7();
+            break;
+
+        // If the user selected twoDexercise 8, run twoDexer_8 function and print a message to the console
+        case 8:
+            system("cls");
+            printf("You Have Chosen 2D Exercise 8\n\n");
+            twoDexer_8();
+            break;
+
+        // If the user selected Exit Program, run the exit_prog function and print a message to the console
+        case 9:
+            system("cls");
+            printf("You Have Chosen to Exit the Program.......\n\n");
+            twoDexit_prog();
+            break;
+
+        // If the user selected something other than 1-9, do nothing and continue the loop
+        default:
+            break;
+    }
+
+    // Call the main function again to restart the program
+    twoDmain();
 }

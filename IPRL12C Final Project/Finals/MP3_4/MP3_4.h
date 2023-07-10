@@ -40,7 +40,7 @@ void M34_menu()
         }
 
         // Get the user's choice of exercise.
-        int selected_M34exercise = get_int("Please choose an option: ", "1234567890\n", 1, num_M34exercise_options);
+        int selected_M34exercise = get_int(1, num_M34exercise_options,"Please choose an option: ");
 
         // Execute the selected exercise.
         switch (selected_M34exercise)
@@ -48,21 +48,21 @@ void M34_menu()
         case 1:
             system("cls");
             printf("\nYou Have Chosen Machine Problem 3\n\n");
-            exercise_1();
+            M34_1();
             printf("\n");
             break;
 
         case 2:
             system("cls");
             printf("\nYou Have Chosen Machine Problem 2\n\n");
-            exercise_2();
+            M34_2();
             printf("\n");
             break;
 
         case 3:
             system("cls");
             printf("\nYou Have Chosen to Exit the Program.......\n");
-            exit_program();
+            M34exit_program();
             break;
 
         default:
@@ -75,8 +75,8 @@ void M34_1()
 {
     printf(" (7/3/2023) Machine Exercise 1\n");
 
-    int n1 = get_int("Enter first integer (n1): ", "1234567890\n", 0, 9999);
-    int n2 = get_int("Enter second integer (n2): ", "1234567890\n", 0, 9999);
+    int n1 = get_int( 0, 9999,"Enter first integer (n1): ");
+    int n2 = get_int(0, 9999,"Enter second integer (n2): ");
 
     if (n1 >= n2)
     {

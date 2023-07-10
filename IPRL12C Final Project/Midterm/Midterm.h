@@ -4,12 +4,14 @@
 #include ".\Structures\Structures.h"
 
 void Midterm_exit_prog();
+void Midterm_Menu();
 
-void Midterm_main()
+int Midterm_main()
 {
     printf("\nBinegas Midterm Activities:\n\n");
     Midterm_Menu();
     printf("\n");
+    return 0;
 }
 
 void Midterm_Menu()
@@ -42,7 +44,7 @@ void Midterm_Menu()
         }
 
         // Get the user's choice of exercise.
-        int selected_Midterm_exercise = get_int("\nPlease choose an option : ", "1234567890\n", 1, Midterm_exercise_options);
+        int selected_Midterm_exercise = get_int(1, Midterm_exercise_options,"\nPlease choose an option : ");
 
         // Execute the selected exercise.
         switch (selected_Midterm_exercise)
@@ -77,14 +79,13 @@ void Midterm_Menu()
             case 5:
                 system("cls");
                 printf("\nYou Have Chosen to Exit the Program.......\n");
-                Midterm_exit_program();
+                Midterm_exit_prog();
                 break;
 
             default:
                 break;
         }
     } 
-    return 0;
 }
 void Midterm_exit_prog()
 {

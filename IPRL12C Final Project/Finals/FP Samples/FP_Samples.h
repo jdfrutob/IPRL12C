@@ -45,7 +45,7 @@ void FPS_menu()
         }
 
         // Get the user's choice of exercise.
-        int selected_exercise = get_int("\nPlease choose an option : ", "1234567890\n", 1, num_FPSexercise_options);
+        int selected_exercise = get_int(1, num_FPSexercise_options,"\nPlease choose an option : ");
 
         // Execute the selected exercise.
         switch (selected_exercise)
@@ -88,7 +88,7 @@ void FPS_menu()
             case 6:
                 system("cls");
                 printf("\nYou Have Chosen to Exit the Program.......\n");
-                exit_program();
+                FPSexit_program();
                 break;
 
             default:

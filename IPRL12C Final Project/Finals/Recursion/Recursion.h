@@ -10,6 +10,7 @@ int R_main()
     printf("\nBinegas Recursion Exercises:\n\n");
     Recursion_menu();
     printf("\n");
+    return 0;
 }
 
 void Recursion_menu()
@@ -42,7 +43,7 @@ void Recursion_menu()
         }
 
         // Get the user's choice of exercise.
-        int selected_Rexercise = get_int("\nPlease choose an option : ", "1234567890\n", 1, num_Rexercise_options);
+        int selected_Rexercise = get_int(1, num_Rexercise_options,"\nPlease choose an option : ");
         // Execute the selected exercise.
         switch (selected_Rexercise)
         {

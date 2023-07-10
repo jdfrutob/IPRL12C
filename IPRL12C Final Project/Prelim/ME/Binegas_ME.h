@@ -8,6 +8,7 @@ int  ME_main()
     printf("\nBinegas Pointers Exercises:\n\n");
     ME_menu();
     printf("\n");
+    return 0;
 }
 
 void ME_menu()
@@ -38,7 +39,7 @@ void ME_menu()
         }
 
         // Get the user's choice of exercise.
-        int selected_exercise = get_int("\nPlease choose an option : ", "1234567890\n", 1, num_exercise_options);
+        int selected_exercise = get_int( 1, num_exercise_options,"\nPlease choose an option : ");
 
         // Execute the selected exercise.
         switch (selected_exercise)

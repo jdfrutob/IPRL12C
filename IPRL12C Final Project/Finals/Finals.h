@@ -4,12 +4,14 @@
 #include ".\FP_IV\IV.h"
 
 void Finals_exit_prog();
+void Finals_Menu();
 
-void Finals_main()
+int Finals_main()
 {
     printf("\nBinegas Finals Activities:\n\n");
     Finals_Menu();
     printf("\n");
+    return 0;
 }
 
 void Finals_Menu()
@@ -37,7 +39,7 @@ void Finals_Menu()
 
 
         // Get the user's choice of exercise.
-        int selected_finals_exercise = get_int("\nPlease choose an option : ", "1234567890\n", 1, Finals_exercise_options);
+        int selected_finals_exercise = get_int(1, Finals_exercise_options,"\nPlease choose an option : ");
 
         // Execute the selected exercise.
         switch (selected_finals_exercise)
@@ -73,14 +75,13 @@ void Finals_Menu()
             case 5:
                 system("cls");
                 printf("\nYou Have Chosen to Exit the Program.......\n");
-                Finals_exit_program();
+                Finals_exit_prog();
                 break;
 
             default:
                 break;
         }
     } 
-    return 0;
 }
 void Finals_exit_prog()
 {

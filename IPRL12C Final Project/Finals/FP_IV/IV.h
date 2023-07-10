@@ -35,7 +35,7 @@ void IV_menu()
 
 
         // Get the user's choice of exercise.
-        int selected_IVexercise = get_int("Please choose an option: ", "1234567890\n", 1, num_IVexercise_options);
+        int selected_IVexercise = get_int(1, num_IVexercise_options,"Please choose an option: ");
 
         // Execute the selected exercise.
         switch (selected_IVexercise)
@@ -57,7 +57,7 @@ void IV_menu()
         case 3:
             system("cls");
             printf("\nYou Have Chosen to Exit the Program.......\n");
-            exit_program();
+            IVexit_program();
             break;
 
         default:
