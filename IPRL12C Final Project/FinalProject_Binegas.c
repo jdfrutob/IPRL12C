@@ -70,7 +70,7 @@ void Main_Menu()
                 printf("\n");
                 break;
 
-            case 10:
+            case 4:
                 system("cls");
                 printf("\nYou Have Chosen to Exit the Program.......\n");
                 exit_program();
@@ -85,7 +85,7 @@ void exit_program()
 { 
     printf("Thank you!\n");
     printf("Made by John Daniel Binegas\n"); 
-    printf("Valdez.h by Marc Valdez\n"); 
+    printf("Valdez_v4.h by Marc Valdez\n"); 
     printf("Give Virtual clap!!!\n\n");
     exit(0);
 }
