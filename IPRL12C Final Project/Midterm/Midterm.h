@@ -23,6 +23,7 @@ void Midterm_Menu()
         "Pointers Machine Exercises",
         "Pointers Samples",
         "Structures Exercises",
+        "Go Back to Main Menu",
         "Exit Program"
     };
 
@@ -77,6 +78,12 @@ void Midterm_Menu()
                 break;
 
             case 5:
+                system("cls");
+                printf("\nYou Have Chosen to Go Back to Main Menu.......\n");
+                return;
+                break;
+
+            case 6:
                 system("cls");
                 printf("\nYou Have Chosen to Exit the Program.......\n");
                 Midterm_exit_prog();

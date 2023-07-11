@@ -58,7 +58,7 @@ static void saveAccounts();
 static void loadAccounts();
 
 // This section defines the function exit_prog
-static void ATM_exit_prog();
+
 
 int ATM_main() {
     
@@ -134,7 +134,7 @@ static void  ATM_selection_Menu()
             "Withdrawal",
             "Account Information",
             "Logout or Change Account",
-            "Exit Program"
+            "Go Back to Midterm Menu"
         };
 
         // Calculate the size of the menu array
@@ -191,8 +191,8 @@ static void  ATM_selection_Menu()
             // If the user selects "Exit Program", exit the program
             case 6:
                 printf("->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->");
-                printf("\n\t\t\tYou Have Chosen to Exit the Program.......\n");
-                ATM_exit_prog();
+                printf("\n\t\t\tYou Have Chosen to Go Back to Midterm Menu.......\n");
+                return;
                 break;
 
             // If the user selects an invalid option, notify them and prompt for another selection
@@ -317,19 +317,5 @@ static void loadAccounts() { //loads the account by reading the accounts.dat fil
     fclose(file); 
 }
 
-// This function is called when the program is about to exit.
-static void ATM_exit_prog() 
-{
-    
-    // The next few lines print out a message thanking the user for using the program and giving credit to the developers.
-    printf("->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->\n\n");
-    printf("\t\t\tThank you!\n");
-    printf("\t\t\tMade by John Daniel Binegas\n");
-    printf("\t\t\tAnd Lance Embile\n");
-    printf("\t\t\tvaldez.h ft: Marc Valdez\n");
-    printf("\t\t\tGIVEEEEE VIRTUALLLL CLAPPPPPPP!!!!!!\n");
-    printf("\n->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->");
-    exit(0);
-}
 
 

@@ -1,7 +1,7 @@
 void IV_menu();
 void IV_1();
 void IV_2();
-void IVexit_program();
+
 
 int IV_main()
 {
@@ -19,7 +19,7 @@ void IV_menu()
     {
         "Machine Exercise 1 : A program that will count all vowels in a .txt file.",
         "Machine Exercise 2 : A program that will determine 2 .txt files if they are identical or not.",
-        "Exit Program"
+        "Go Back to Finals Menu"
     };
 
     // Calculate the number of exercise options.
@@ -56,8 +56,8 @@ void IV_menu()
 
         case 3:
             system("cls");
-            printf("\nYou Have Chosen to Exit the Program.......\n");
-            IVexit_program();
+            printf("\nYou Have Chosen to Go Back to Finals Menu.......\n");
+            return;
             break;
 
         default:
@@ -160,13 +160,4 @@ void IV_2() {
         printf("The files \"%s\" and \"%s\" are identical.\n", filepath1, filepath2);
     else
         printf("The files \"%s\" and \"%s\" are not identical.\n", filepath1, filepath2);
-}
-
-void IVexit_program()
-{
-    printf("Thank you!\n");
-    printf("Made by John Daniel Binegas\n");
-    printf("Valdez.h by Marc Valdez\n");
-    printf("Give Virtual clap!!!\n\n");
-    exit(0);
 }

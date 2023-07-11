@@ -86,7 +86,7 @@ static int fare_matrix[2][20][20] = {
 	}
 };
 
-int lrt_main()
+void lrt_main()
 {
 	// Some greetings.
 	printf("Welcome to LRT Line 1!\n\n");
@@ -124,8 +124,10 @@ int lrt_main()
 
 	// Some closing greetings.
 	printf("\nThank you for riding LRT-1!\n\n");
-
-	return 0;
+	system("pause");
+	system("cls");
+	printf("\nYou Have Chosen to Go Back to Prelim Menu.......\n");
+	return;
 }
 
 // The minimum reload amount of a beep card is 13 pesos.

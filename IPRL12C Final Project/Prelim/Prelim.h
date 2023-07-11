@@ -19,9 +19,9 @@ void Prelim_Menu()
     {
         "1D Array Exercises",
         "2D Array Exercises",
+        "Prelim ME",
         "LRT System",
-        "ME",
-        "Exit Program"
+        "Go Back to Main Menu"
     };
 
     // Calculate the number of exercise options.
@@ -76,8 +76,8 @@ void Prelim_Menu()
 
             case 5:
                 system("cls");
-                printf("\nYou Have Chosen to Exit the Program.......\n");
-                Prelim_exit_prog();
+                printf("\nYou Have Chosen to Go Back to Main Menu.......\n");
+                return;
                 break;
 
             default:

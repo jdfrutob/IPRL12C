@@ -1,7 +1,6 @@
 void M34_menu();
 void M34_1();
 void M34_2();
-void M34exit_program();
 
 int M34_main()
 {
@@ -19,7 +18,7 @@ void M34_menu()
     {
         "Machine Problem  3",
         "Machine Problem   4",
-        "Exit Program"
+        "Go Back to Finals Menu"
     };
 
     // Calculate the number of exercise options.
@@ -62,7 +61,7 @@ void M34_menu()
         case 3:
             system("cls");
             printf("\nYou Have Chosen to Exit the Program.......\n");
-            M34exit_program();
+            return;
             break;
 
         default:
@@ -115,13 +114,4 @@ void M34_2()
     }
 
     fclose(file);
-}
-
-void M34exit_program()
-{
-    printf("Thank you!\n");
-    printf("Made by John Daniel Binegas\n");
-    printf("Valdez.h by Marc Valdez\n");
-    printf("Give Virtual clap!!!\n\n");
-    exit(0);
 }

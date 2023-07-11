@@ -4,7 +4,6 @@ void S_1();
 void S_2();
 void S_3();
 void S_4();
-void S_exit_prog();
 
 int Struct_main()
 {
@@ -23,7 +22,7 @@ void Struct_menu()
             "Structure Exercise 2",
             "Structure Exercise 3",
             "Structure Exercise 4",
-            "Exit Program"
+            "Go Back to Midterm Menu"
         };
 
         int num_Sexercise_options = sizeof(S_exercises) / sizeof(S_exercises[0]);
@@ -58,8 +57,8 @@ void Struct_menu()
                 break;
 
             case 5:
-                printf("\nYou Have Chosen to Exit the Program.......\n");
-                S_exit_prog();
+                printf("\nYou Have Chosen to Go Back to Midterm Menu.......\n");
+                return;
                 break;
 
             default:
@@ -147,14 +146,4 @@ void S_4()
 
     for(int i = 0; i < 5; i++)
         printf("\nPointArray[%d].x=%d,\tPointArray[%d].y=%d,\tPointArray[%d].z=%d\n\n", i, PointArray[i].x, i, PointArray[i].y, i, PointArray[i].z);
-}
-
-void S_exit_prog()
-{
-    printf("Thank you!\n");
-    printf("Made by John Daniel Binegas\n");
-    printf("valdez.h ft: Marc Valdez\n");
-    printf("GIVEEEEE VIRTUALLLL CLAPPPPPPP!!!!!!\n\n");
-
-    exit(0);
 }

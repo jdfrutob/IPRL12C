@@ -8,7 +8,7 @@ void PS_6();
 void PS_7();
 void PS_8();
 void PS_9();
-void PS_exit_program();
+
 
 int Pointers_Samples_main()
 {
@@ -32,7 +32,7 @@ void PS_menu()
         "Pointers Sample Exercise 7",
         "Pointers Sample Exercise 8",
         "Pointers Sample Exercise 9",
-        "Exit Program"
+        "Go Back to Midterm Menu"
     };
 
     // Calculate the number of exercise options.
@@ -123,8 +123,8 @@ void PS_menu()
 
             case 10:
                 system("cls");
-                printf("\nYou Have Chosen to Exit the Program.......\n");
-                PS_exit_program();
+                printf("\nYou Have Chosen to Go Back to Midterm Menu.......\n");
+                return;
                 break;
 
             default:
@@ -277,11 +277,3 @@ void PS_9()
     }
 }
 
-void PS_exit_program() 
-{ 
-    printf("Thank you!\n");
-    printf("Made by John Daniel Binegas\n"); 
-    printf("Valdez.h by Marc Valdez\n"); 
-    printf("Give Virtual clap!!!\n\n");
-    exit(0);
-}

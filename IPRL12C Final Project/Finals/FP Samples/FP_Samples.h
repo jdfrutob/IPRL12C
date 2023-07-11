@@ -4,7 +4,6 @@ void FPS_2();
 void FPS_3();
 void FPS_4();
 void FPS_5();
-void FPSexit_program();
 
 int FPS_main()
 {
@@ -23,8 +22,7 @@ void FPS_menu()
         "Exercise 3",
         "Exercise 4",
         "Exercise 5",
-
-        "Exit Program"
+        "Go Back to Finals Menu",
     };
 
     // Calculate the number of exercise options.
@@ -87,8 +85,8 @@ void FPS_menu()
 
             case 6:
                 system("cls");
-                printf("\nYou Have Chosen to Exit the Program.......\n");
-                FPSexit_program();
+                printf("\nYou Have Chosen to Go Back to Finals Menu.......\n");
+                return;
                 break;
 
             default:
@@ -236,12 +234,4 @@ void FPS_5() // this section defines the function source code 5
     fprintf(stdout, "mystr = %s\n", mystr);
 
     fclose(inputf);
-}
-void FPSexit_program() 
-{ 
-    printf("Thank you!\n");
-    printf("Made by John Daniel Binegas\n"); 
-    printf("Valdez.h by Marc Valdez\n"); 
-    printf("Give Virtual clap!!!\n\n");
-    exit(0);
 }

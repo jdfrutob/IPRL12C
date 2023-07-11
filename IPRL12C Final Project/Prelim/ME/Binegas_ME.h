@@ -1,11 +1,11 @@
 void ME_menu();
 void MExercise_1();
 void MExercise_2();
-void MExit_prog();
+
 
 int  ME_main()
 {
-    printf("\nBinegas Pointers Exercises:\n\n");
+    printf("\nBinegas Prelim Machine Exercises:\n\n");
     ME_menu();
     printf("\n");
     return 0;
@@ -18,7 +18,7 @@ void ME_menu()
     {
         "Exercise 1",
         "Exercise 2",
-        "Exit Program"
+        "Go Back to Prelim Menu"
     };
 
     // Calculate the number of exercise options.
@@ -60,8 +60,8 @@ void ME_menu()
 
             case 3:
                 system("cls");
-                printf("\nYou Have Chosen Exercise 3\n\n");
-                MExit_prog();
+                printf("\nYou Have Chosen to Go Back to Prelim Menu.......\n");
+                return;
                 printf("\n");
                 break;
 

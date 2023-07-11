@@ -7,7 +7,7 @@ void oneDexer_5();
 void oneDexer_6();
 void oneDexer_7();
 void oneDexer_8();
-void oneDexit_prog();
+
 
 void oneDmenu(char* Exercises[], int size)
 {
@@ -264,17 +264,9 @@ void oneDexer_9()
 }
 
 
-void oneDexit_prog()
-{
-    printf("Thankyouu\n");
-    printf("Made by John Daniel Binegas\n");
-    printf("valdez.h ft:Marc Valdez\n");
-    printf("GIVEEEEE VIRTUALLLL CLAPPPPPPP!!!!!!\n\n");
 
-    exit (0);
-}
 // This is the main function where the program begins
-int oneDmain()
+void oneDmain()
 {
     // Print a message to the console to indicate that we are running Binegas 2D Array Exercises
     printf("Binegas 1D Array Exercises:\n");
@@ -290,7 +282,7 @@ int oneDmain()
         "Exercise 6",
         "Exercise 7",
         "Exercise 8",
-        "Exit Program"
+        "Go Back to Prelim Menu"
     };
 
     // Determine the number of exercises in the array
@@ -307,61 +299,64 @@ int oneDmain()
     {
         // If the user selected Exercise 1, run exer_1 function and print a message to the console
         case 1:
+            system("cls");
             printf("You Have Chosen 1D Exercise 1\n\n");
             oneDexer_1();
             break;
 
         // If the user selected Exercise 2, run exer_2 function and print a message to the console
         case 2:
+            system("cls");
             printf("You Have Chosen 1D Exercise 2\n\n"); 
             oneDexer_2();
             break;
 
         // If the user selected Exercise 3, run exer_3 function and print a message to the console
         case 3:
+            system("cls");
             printf("You Have Chosen 1D Exercise 3\n\n");
             oneDexer_3();
             break;
 
         // If the user selected Exercise 4, run exer_4 function and print a message to the console
         case 4:
+            system("cls");
             printf("You Have Chosen 1D Exercise 4\n\n");
             oneDexer_4();
             break;
 
         // If the user selected Exercise 5, run exer_5 function and print a message to the console
         case 5:
+            system("cls");
             printf("You Have Chosen 1D Exercise 5\n\n");
             oneDexer_5();
             break;
 
         // If the user selected Exercise 6, run exer_6 function and print a message to the console
         case 6:
+            system("cls");
             printf("You Have Chosen 1D Exercise 6\n\n");
             oneDexer_6();
             break;
 
         // If the user selected Exercise 7, run exer_7 function and print a message to the console
         case 7:
+            system("cls");
             printf("You Have Chosen 1D Exercise 7\n\n");
             oneDexer_7();
             break;
 
         // If the user selected Exercise 8, run exer_8 function and print a message to the console
         case 8:
+            system("cls");
             printf("You Have Chosen 1D Exercise 8\n\n");
             oneDexer_8();
             break;
 
-        // If the user selected Exit Program, run the exit_prog function and print a message to the console
         case 9:
-            printf("You Have Chosen 1D Exercise 9\n\n");
-            oneDexer_9();
-            break;
-
-        case 10:
-            printf("You Have Chosen to Exit the Program.......\n\n");
-            oneDexit_prog();
+            system("cls");
+            printf("You Have Chosen to Go Back to Prelim Menu.......\n\n");
+            return;
             break;
         // If the user selected something other than 1-9, do nothing and continue the loop
         default:

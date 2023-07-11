@@ -2,7 +2,6 @@ void PMes_display_menu();
 void PMes_1();
 void PMes_2();
 void PMes_3();
-void PMes_exit_program();
 
 int PMes_main()
 {
@@ -20,7 +19,7 @@ void PMes_display_menu()
         "Pointers Machine Exercise 1",
         "Pointer Machine Exercise 2",
         "Pointers Machine Exercise 3",
-        "Exit Program"
+        "Go Back to Midterm Menu"
     };
 
     // Calculate the number of exercise options.
@@ -69,8 +68,8 @@ void PMes_display_menu()
 
             case 4:
                 system("cls");
-                printf("\nYou Have Chosen to Exit the Program.......\n");
-                PMes_exit_program();
+                printf("\nYou Have Chosen to Go Back to Midterm Menu.......\n");
+                return;
                 break;
 
             default:
@@ -172,13 +171,4 @@ void PMes_3()
 
     PMes_add(pc, a, b);
     printf("Print add(%d, %d) = %d\n", a, b, *pc);
-}
-
-void PMes_exit_program() 
-{ 
-    printf("Thank you!\n");
-    printf("Made by John Daniel Binegas\n"); 
-    printf("Valdez.h by Marc Valdez\n"); 
-    printf("Give Virtual clap!!!\n\n");
-    exit(0);
 }

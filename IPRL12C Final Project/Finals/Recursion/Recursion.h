@@ -3,7 +3,7 @@ void Rexercise_1();
 void Rexercise_2();
 void Rexercise_3();
 void Rexercise_4();
-void Rexit_program();
+
 
 int R_main()
 {
@@ -22,7 +22,7 @@ void Recursion_menu()
         "Recursion Exercise 2",
         "Recursion Exercise 3",
         "Recursion Exercise 4",
-        "Exit Program"
+        "Go Back to Finals Menu"
     };
 
     // Calculate the number of exercise options.
@@ -78,7 +78,7 @@ void Recursion_menu()
             case 5:
                 system("cls");
                 printf("\nYou Have Chosen to Exit the Program.......\n");
-                Rexit_program();
+                return;
                 break;
 
             default:
@@ -166,11 +166,3 @@ void Rexercise_4()
     printf("Ackermann result: %d\n", result);
 }
 
-void Rexit_program() 
-{ 
-    printf("Thank you!\n");
-    printf("Made by John Daniel Binegas\n"); 
-    printf("Valdez.h by Marc Valdez\n"); 
-    printf("Give Virtual clap!!!\n\n");
-    exit(0);
-}

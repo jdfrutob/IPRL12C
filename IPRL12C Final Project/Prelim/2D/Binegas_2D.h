@@ -9,7 +9,6 @@ void twoDexer_5();
 void twoDexer_6();
 void twoDexer_7();
 void twoDexer_8();
-void twoDexit_prog();
 
 
 void twoDmenu(char* Exercises[], int size)
@@ -245,16 +244,8 @@ void twoDexer_8()
     int C[rows][cols];
     matrixsum(A,B,C);
 }
-void twoDexit_prog()
-{
-    printf("Thankyouu\n");
-    printf("Made by John Daniel Binegas\n");
-    printf("valdez.h ft:Marc Valdez\n");
-    printf("GIVEEEEE VIRTUALLLL CLAPPPPPPP!!!!!!\n\n");
 
-    exit (0);
-}
-int twoDmain()
+void twoDmain()
 {
     // Print a message to the console to indicate that we are running Binegas 2D Array Exercises
     printf("Binegas 2D Array Exercises:\n");
@@ -270,7 +261,7 @@ int twoDmain()
         "Exercise 6",
         "Exercise 7",
         "Exercise 8",
-        "Exit Program"
+        "Go Back to Prelim Menu"
     };
 
     // Determine the number of exercises in the array
@@ -344,8 +335,8 @@ int twoDmain()
         // If the user selected Exit Program, run the exit_prog function and print a message to the console
         case 9:
             system("cls");
-            printf("You Have Chosen to Exit the Program.......\n\n");
-            twoDexit_prog();
+            printf("You Have Chosen to Go Back to Prelim Menu.......\n\n");
+            return;
             break;
 
         // If the user selected something other than 1-9, do nothing and continue the loop
