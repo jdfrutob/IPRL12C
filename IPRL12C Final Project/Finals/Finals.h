@@ -33,9 +33,16 @@ void Finals_Menu()
     // Loop indefinitely until the user chooses to exit.
     while (1)
     {
-        // Display the exercise options in a single column.
-        for (int i = 0; i < Finals_exercise_options; i++)
-            printf("[%d] %-20s\n", i + 1, Finals_options[i]);
+        // Display the exercise options in two columns.
+        for (int i = 0; i < Finals_exercise_options; i += 2)
+        {
+            printf("[%d] %-20s", i + 1, Finals_options[i]);
+            if (i + 1 < Finals_exercise_options)
+            {
+            printf(" [%d] %s", i + 2, Finals_options[i + 1]);
+            }
+            printf("\n");
+        }
 
 
 
