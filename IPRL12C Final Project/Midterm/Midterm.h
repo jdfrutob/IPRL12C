@@ -98,7 +98,7 @@ void Midterm_exit_prog()
 {
     printf("Thankyouu\n");
     printf("Made by John Daniel Binegas\n");
-    printf("valdez.h ft:Marc Valdez\n");
+    printf("valdez_v4.h ft:Marc Valdez\n");
     printf("GIVEEEEE VIRTUALLLL CLAPPPPPPP!!!!!!\n\n");
 
     exit(0);
