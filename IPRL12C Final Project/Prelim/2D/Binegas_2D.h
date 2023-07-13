@@ -148,8 +148,8 @@ void sumrow (int A[5][3])
 {
 	for (int i = 0; i < 5; i++)
 	{
-        for (int j = 0; j < 3; j++)
-        	printf("%d\t", A[i][j]);
+        for(int j = 0; j < 3; j++) 
+            printf("%d\t", A[i][j]);
 		printf("\n");    
 	}
 	int rowselect;

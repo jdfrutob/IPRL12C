@@ -9,8 +9,10 @@ int FPS_main()
 {
     printf("\nBinegas File Processing Samples:\n\n");
     FPS_menu();
-    printf("\n");
+    printf("\n");   
+    return 0;
 }
+
 
 void FPS_menu()
 {
