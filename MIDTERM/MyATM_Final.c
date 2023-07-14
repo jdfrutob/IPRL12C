@@ -62,6 +62,7 @@ static void saveAccounts();
 
 static void loadAccounts();
 
+static void show_Accounts();
 // This section defines the function exit_prog
 static void exit_prog();
 
@@ -138,6 +139,7 @@ static void selection_Menu()
             "Withdrawal",
             "Account Information",
             "Logout or Change Account",
+            "Show Accounts",
             "Exit Program"
         };
 
@@ -149,7 +151,7 @@ static void selection_Menu()
             printf("[%d] %s\n", i + 1, Menu[i]);
 
         // Get the user's selection from the menu
-        int usersel = get_int("Select from the menu above: ","123456\n",1,6);
+        int usersel = get_int("Select from the menu above: ","1234567\n",1,7);
 
         // Process the user's selection
         switch (usersel)
@@ -192,8 +194,16 @@ static void selection_Menu()
                 input_Pin();
                 break;
 
+             case 6:
+                printf("->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->");
+                system("cls");
+                printf("\n\tYou Have Chosen to Display Account Name, Account Pin and Account Balance in the System\n");
+                show_Accounts();
+                printf("->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->\n\n");
+                break;
+
             // If the user selects "Exit Program", exit the program
-            case 6:
+            case 7:
                 printf("->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->->");
                 printf("\n\t\t\tYou Have Chosen to Exit the Program.......\n");
                 exit_prog();
@@ -319,6 +329,14 @@ static void loadAccounts() { //loads the account by reading the accounts.dat fil
     }
     accounts_size = fread(accounts, sizeof(ATM), 100, file);
     fclose(file); 
+}
+
+void show_Accounts() {
+    printf("\n\n");
+    printf("Account Name\t\t\t\t\tPIN\t\t\t\t\tBalance\n");
+    printf("------------------------------------------------------------------------------------------------------------\n");
+    for (int i = 0; i < accounts_size; i++) 
+        printf("%s\t\t\t\t%d\t\t\t\t\t%.2lf\n", accounts[i].account_name, accounts[i].pin_number, accounts[i].account_balance);
 }
 
 // This function is called when the program is about to exit.
