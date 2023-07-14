@@ -33,10 +33,10 @@ void Prelim_Menu()
         // Display the exercise options in two columns.
         for (int i = 0; i < prelim_exercise_options; i += 2)
         {
-            printf("[%d] %-20s", i + 1, prelim_options[i]);
+            printf("[%d] %-20s\t\t", i + 1, prelim_options[i]);
             if (i + 1 < prelim_exercise_options)
             {
-            printf(" [%d] %s", i + 2, prelim_options[i + 1]);
+            printf(" [%d] %s\t\t", i + 2, prelim_options[i + 1]);
             }
             printf("\n");
         }

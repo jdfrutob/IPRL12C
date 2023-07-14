@@ -87,7 +87,7 @@ static void input_Pin()
         int currentAccountIndex = -1;
 
         // Loop through all the accounts in the system and check if the input PIN matches any
-        for (int i = 0; i < sizeof(accounts)/sizeof(accounts[0]); i++)
+        for (int i = 0; i < (int)(sizeof(accounts)/sizeof(accounts[0])); i++)
         {
             if (accounts[i].pin_number == pin_number)
             {

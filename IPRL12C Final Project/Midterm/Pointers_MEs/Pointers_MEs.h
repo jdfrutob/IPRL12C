@@ -106,16 +106,15 @@ void PMes_2()
 {
     //Assume the following declaration:
     double d;
-    double *pd;
 
     //Explain the result of the following statements:
-    pd = &d;
     printf("Input a value: ");
     scanf("%lf", &d);
 
     //What is the value of "d" after executing scanf()?
     printf("\nThe value of d is %lf\n", d);
 }
+
 
 int sum(int a, int b)
 {
@@ -143,13 +142,13 @@ void PMes_3()
 
 
     printf("The following does the same, except that a pointer is being used to store the sum.\n\n");
-   
+
 
     printf("void add(int *pc, int a, int b)\n");
     printf("{\n");
     printf("\t *pc = a + b; \n");
     printf("}\n\n");
-    
+
 
     printf("Which do you think is better?  Why?\n");
     printf("Both have different advantages namely :\n");
@@ -162,13 +161,15 @@ void PMes_3()
     int a = 5;
     int b = 6;
     int c = sum(a,b);
-    
+
     printf("Print sum(%d, %d) = %d\n\n", a, b, c);
 
     //Give an example of how to call the function add()
     printf("Function add(int *pc, int a, int b)\n");
-    int *pc;
+    int *pc = malloc(sizeof(int)); // Initialize pc pointer
 
     PMes_add(pc, a, b);
     printf("Print add(%d, %d) = %d\n", a, b, *pc);
+
+    free(pc); // Free the allocated memory
 }
