@@ -333,11 +333,12 @@ static void loadAccounts() { //loads the account by reading the accounts.dat fil
 
 void show_Accounts() {
     printf("\n\n");
-    printf("Account Name\t\t\t\t\tPIN\t\t\t\t\tBalance\n");
+    printf("Acc #\t\tAccount Name\t\t\t\t\tPIN\t\t\t\t\tBalance\n");
     printf("------------------------------------------------------------------------------------------------------------\n");
     for (int i = 0; i < accounts_size; i++) 
-        printf("%s\t\t\t\t%d\t\t\t\t\t%.2lf\n", accounts[i].account_name, accounts[i].pin_number, accounts[i].account_balance);
+        printf("%d\t\t%s\t\t\t\t%d\t\t\t\t\t%.2lf\n", i+1, accounts[i].account_name, accounts[i].pin_number, accounts[i].account_balance);
 }
+
 
 // This function is called when the program is about to exit.
 static void exit_prog() 
